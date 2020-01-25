@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Unicode Nepali Converter</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="j.js"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  
+    <script language="javascript" type="text/javascript">
+        function SelectAll(textboxID) 
+        { 
+            var txtbox = document.getElementById(textboxID);
+            if(txtbox == null)return;
+	        if(txtbox.createTextRange)  /*.IE*/
+	        {
+		        t = txtbox.createTextRange();
+		        if(t.select)
+			        t.select();
+                /*
+		        if(t.execCommand)
+			        t.execCommand('copy');
+			    */    
+	        }
+	        if(txtbox.setSelectionRange) /*.Mozilla*/
+	        {
+		        txtbox.setSelectionRange(0,txtbox.value.length);
+	        }
+	        else if(txtbox.createTextRange) /*.Opera 8*/
+	        {
+		        var r = txtbox.createTextRange();
+		        r.select();
+	        }
+	        if(txtbox.focus)
+		        txtbox.focus();			
+		        
+		    return false;		
+        }    
+    </script>
+
+    <!--META_TAGS-->
+
+</head>
+
+<body>
+<div id="container" style="padding:5px;">
+   
+    <br />
+    <form name="form1" id="form1">
+        <a href="#" onclick="SelectAll('txtUnicode');" id="A1">Select All Text</a> 
+        <div>
+            <textarea id="txtUnicode" name="textarea1" rows="25" cols="100" style="width:800px" class="UnicodeNepali"></textarea>
+            <textarea id="txtUnicode" name="textarea1" rows="25" cols="100" style="width:800px" class="UnicodeNepali"></textarea>
+        </div>    
+    </form>    
+</div>
+<script language="javascript" type="text/javascript">
+    InitializeUnicodeNepali();
+    document.getElementById('txtUnicode').focus();
+</script>
+
+
+</body>
+</html>
